@@ -8,7 +8,7 @@ register = template.Library()
 
 
 @register.simple_tag(takes_context=True)
-def render_menu(context, menu):
+def draw_menu(context, menu):
     items = ListItems.objects.filter(menu=menu)
     request = context['request']
     url = request.path_info
